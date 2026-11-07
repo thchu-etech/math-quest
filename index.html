@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <title>數學星球｜闖關大冒險</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./vendor/phaser.min.js" defer></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="數學星球首頁">
+          <span class="brand-mark" aria-hidden="true"><span>✳</span></span>
+          <span class="brand-name">小小探險隊<span class="brand-dot">.</span></span>
+        </a>
+        <div class="header-note"><span class="sparkle">✦</span> 邊玩邊學，數學好好玩！</div>
+        <div class="header-tag"><span class="online-dot"></span> 學習任務</div>
+      </header>
+
+      <section class="intro-row" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> MATH QUEST · 任務 01</p>
+          <h1 id="page-title">數學星球 <span>闖關大冒險</span></h1>
+          <p class="subtitle">跳上平台，找到正確答案！準備好出發了嗎？</p>
+        </div>
+        <div class="sticker" aria-hidden="true"><span class="sticker-icon">🚀</span><span>動動腦<br />也動動身！</span></div>
+      </section>
+
+      <section class="game-card" aria-label="數學星球遊戲">
+        <div class="game-topbar">
+          <div class="level-summary">
+            <span class="level-icon" aria-hidden="true">✦</span>
+            <div><span class="micro-label">目前進度</span><strong id="level-label">第 1 關 <span>/ 5</span></strong></div>
+          </div>
+          <div class="progress-track" aria-label="關卡進度"><div id="progress-fill" class="progress-fill"></div></div>
+          <div class="score-card"><span class="score-icon" aria-hidden="true">★</span><div><span class="micro-label">我的分數</span><strong id="score-label">0 <small>分</small></strong></div></div>
+        </div>
+
+        <div class="challenge-row">
+          <div class="challenge-label"><span class="challenge-icon" aria-hidden="true">?</span><span>本關題目</span></div>
+          <div class="question" id="question-label" aria-live="polite">按下開始，看看第一題！</div>
+          <div class="goal-chip"><span aria-hidden="true">◎</span> 找到答案泡泡</div>
+        </div>
+
+        <div class="game-stage">
+          <div id="game-root" class="game-root">
+            <div class="intro-overlay" id="intro-overlay">
+              <div class="intro-card">
+                <div class="intro-planet" aria-hidden="true">🪐</div>
+                <p class="intro-kicker">READY, SET, THINK!</p>
+                <h2>準備好展開<br /><span>數學大冒險了嗎？</span></h2>
+                <p class="intro-copy">每關解一題，操控小探險家蒐集正確答案。答對得 <b>＋10 分</b>，答錯扣 <b>－5 分</b>！</p>
+                <button id="start-button" class="primary-button">開始闖關 <span aria-hidden="true">→</span></button>
+                <p class="keyboard-hint"><span>←</span><span>→</span> 移動 <span class="key-space">空白鍵</span> 跳躍</p>
+              </div>
+              <div class="overlay-orbit orbit-one"></div><div class="overlay-orbit orbit-two"></div>
+            </div>
+            <div class="win-overlay" id="win-overlay" hidden>
+              <div class="win-card">
+                <div class="win-emoji" aria-hidden="true">🏆</div>
+                <p class="intro-kicker">MISSION COMPLETE!</p>
+                <h2>太厲害了！<br /><span>五關全部完成</span></h2>
+                <p class="win-score">你的總分 <strong id="final-score">0</strong> 分</p>
+                <button id="restart-button" class="primary-button">再玩一次 <span aria-hidden="true">↻</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-bottom">
+          <div class="legend"><span class="legend-dot correct-dot"></span>正確答案 <span class="legend-dot wrong-dot"></span>其他答案 <span class="legend-sep">·</span> 收集後即可作答</div>
+          <div class="keyboard-legend"><span>←</span><span>→</span> 移動 <span class="key-space">空白鍵</span> 跳躍</div>
+        </div>
+        <div class="touch-controls" aria-label="觸控遊戲控制">
+          <button class="control-button" data-control="left" aria-label="向左移動">←</button>
+          <button class="control-button" data-control="right" aria-label="向右移動">→</button>
+          <button class="control-button jump-button" data-control="jump" aria-label="跳躍">跳！</button>
+        </div>
+      </section>
+
+      <footer class="page-footer"><span>小小探險隊</span><span class="footer-star">✦</span><span>每一次思考，都是一次冒險。</span></footer>
+    </main>
+  </body>
+</html>
