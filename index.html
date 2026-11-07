@@ -3,85 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f7f6f1" />
-    <title>數學星球｜闖關大冒險</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./vendor/phaser.min.js" defer></script>
-    <script src="./main.js" defer></script>
+    <meta name="theme-color" content="#f6f8ff" />
+    <meta name="description" content="操作小小太空探險家，在五個星球蒐集數學答案！" />
+    <title>星際數學隊｜數學闖關遊戲</title>
   </head>
   <body>
-    <main class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#" aria-label="數學星球首頁">
-          <span class="brand-mark" aria-hidden="true"><span>✳</span></span>
-          <span class="brand-name">小小探險隊<span class="brand-dot">.</span></span>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="星際數學隊首頁">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>星際數學隊</span>
         </a>
-        <div class="header-note"><span class="sparkle">✦</span> 邊玩邊學，數學好好玩！</div>
-        <div class="header-tag"><span class="online-dot"></span> 學習任務</div>
+        <div class="top-note"><span class="status-dot"></span> 太空學習任務</div>
       </header>
 
-      <section class="intro-row" aria-labelledby="page-title">
+      <section class="hero">
         <div>
-          <p class="eyebrow"><span class="eyebrow-line"></span> MATH QUEST · 任務 01</p>
-          <h1 id="page-title">數學星球 <span>闖關大冒險</span></h1>
-          <p class="subtitle">跳上平台，找到正確答案！準備好出發了嗎？</p>
+          <p class="eyebrow"><span></span> MATH EXPLORERS · 01</p>
+          <h1>星際數學隊 <span>出發！</span></h1>
+          <p class="hero-copy">跳上星球、蒐集答案，完成五站數學任務。</p>
         </div>
-        <div class="sticker" aria-hidden="true"><span class="sticker-icon">🚀</span><span>動動腦<br />也動動身！</span></div>
+        <div class="hero-badge" aria-hidden="true"><span class="badge-orbit">✦</span><span>想一想<br />跳一跳！</span></div>
       </section>
 
-      <section class="game-card" aria-label="數學星球遊戲">
-        <div class="game-topbar">
-          <div class="level-summary">
-            <span class="level-icon" aria-hidden="true">✦</span>
-            <div><span class="micro-label">目前進度</span><strong id="level-label">第 1 關 <span>/ 5</span></strong></div>
-          </div>
-          <div class="progress-track" aria-label="關卡進度"><div id="progress-fill" class="progress-fill"></div></div>
-          <div class="score-card"><span class="score-icon" aria-hidden="true">★</span><div><span class="micro-label">我的分數</span><strong id="score-label">0 <small>分</small></strong></div></div>
-        </div>
-
-        <div class="challenge-row">
-          <div class="challenge-label"><span class="challenge-icon" aria-hidden="true">?</span><span>本關題目</span></div>
-          <div class="question" id="question-label" aria-live="polite">按下開始，看看第一題！</div>
-          <div class="goal-chip"><span aria-hidden="true">◎</span> 找到答案泡泡</div>
-        </div>
-
-        <div class="game-stage">
-          <div id="game-root" class="game-root">
-            <div class="intro-overlay" id="intro-overlay">
-              <div class="intro-card">
-                <div class="intro-planet" aria-hidden="true">🪐</div>
-                <p class="intro-kicker">READY, SET, THINK!</p>
-                <h2>準備好展開<br /><span>數學大冒險了嗎？</span></h2>
-                <p class="intro-copy">每關解一題，操控小探險家蒐集正確答案。答對得 <b>＋10 分</b>，答錯扣 <b>－5 分</b>！</p>
-                <button id="start-button" class="primary-button">開始闖關 <span aria-hidden="true">→</span></button>
-                <p class="keyboard-hint"><span>←</span><span>→</span> 移動 <span class="key-space">空白鍵</span> 跳躍</p>
+      <section class="game-layout" aria-label="星際數學遊戲">
+        <div class="game-column">
+          <section class="game-card">
+            <div class="hud">
+              <div class="hud-level">
+                <span class="hud-icon">✦</span>
+                <div><span class="hud-caption">星球</span><strong id="level-label">第 1 關</strong></div>
               </div>
-              <div class="overlay-orbit orbit-one"></div><div class="overlay-orbit orbit-two"></div>
-            </div>
-            <div class="win-overlay" id="win-overlay" hidden>
-              <div class="win-card">
-                <div class="win-emoji" aria-hidden="true">🏆</div>
-                <p class="intro-kicker">MISSION COMPLETE!</p>
-                <h2>太厲害了！<br /><span>五關全部完成</span></h2>
-                <p class="win-score">你的總分 <strong id="final-score">0</strong> 分</p>
-                <button id="restart-button" class="primary-button">再玩一次 <span aria-hidden="true">↻</span></button>
+              <div class="hud-question">
+                <span class="hud-caption">任務題目</span>
+                <strong id="question-label">準備好就按下出發！</strong>
+              </div>
+              <div class="hud-score">
+                <span class="score-star">★</span>
+                <div><span class="hud-caption">目前分數</span><strong><span id="score-label">0</span><small> 分</small></strong></div>
               </div>
             </div>
-          </div>
+
+            <div class="progress-row">
+              <span id="round-label">第 1 題 / 3</span>
+              <div class="progress-track" aria-label="遊戲進度"><div id="progress-fill"></div></div>
+              <span>共 5 關</span>
+            </div>
+
+            <div class="stage">
+              <div id="game-root" class="game-root" aria-label="遊戲畫面"></div>
+              <div id="start-screen" class="overlay">
+                <div class="overlay-card start-card">
+                  <div class="planet-icon" aria-hidden="true">🪐</div>
+                  <p class="overlay-kicker">READY FOR TAKEOFF?</p>
+                  <h2>小小探險家<br /><span>準備出發了嗎？</span></h2>
+                  <p>移動角色碰到正確的答案泡泡。<br />答對 <b>＋10 分</b>，答錯 <b>－5 分</b>！</p>
+                  <button id="start-button" class="primary-button" disabled>開始闖關 <span>→</span></button>
+                  <div class="start-hint"><kbd>←</kbd><kbd>→</kbd> 移動 <kbd>空白鍵</kbd> 跳躍</div>
+                </div>
+                <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+              </div>
+              <div id="level-clear-screen" class="overlay" hidden>
+                <div class="overlay-card result-card">
+                  <div class="result-icon" aria-hidden="true">🚀</div>
+                  <p class="overlay-kicker">PLANET CLEARED!</p>
+                  <h2>太棒了！<br /><span>這一關完成</span></h2>
+                  <p>繼續前往下一個星球吧。</p>
+                  <button id="next-level-button" class="primary-button">下一關 <span>→</span></button>
+                </div>
+              </div>
+              <div id="complete-screen" class="overlay" hidden>
+                <div class="overlay-card result-card">
+                  <div class="result-icon trophy" aria-hidden="true">🏆</div>
+                  <p class="overlay-kicker">MISSION COMPLETE!</p>
+                  <h2>五個星球<br /><span>全部探索完成！</span></h2>
+                  <p class="final-score-line">你的總分 <strong id="final-score">0</strong> 分</p>
+                  <button id="restart-button" class="primary-button">再玩一次 <span>↻</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-footer">
+              <div id="feedback" class="feedback" aria-live="polite">碰到答案泡泡來作答</div>
+              <div class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd> 移動 <kbd>空白鍵</kbd> 跳躍</div>
+            </div>
+            <div class="touch-controls" aria-label="觸控遊戲控制">
+              <button class="control-button" data-control="left" aria-label="向左">←</button>
+              <button class="control-button" data-control="right" aria-label="向右">→</button>
+              <button class="control-button jump-button" data-control="jump" aria-label="跳躍">跳！</button>
+            </div>
+          </section>
+          <p class="asset-credit">角色與星球場景素材：Kenney New Platformer Pack（CC0）</p>
         </div>
 
-        <div class="game-bottom">
-          <div class="legend"><span class="legend-dot correct-dot"></span>正確答案 <span class="legend-dot wrong-dot"></span>其他答案 <span class="legend-sep">·</span> 收集後即可作答</div>
-          <div class="keyboard-legend"><span>←</span><span>→</span> 移動 <span class="key-space">空白鍵</span> 跳躍</div>
-        </div>
-        <div class="touch-controls" aria-label="觸控遊戲控制">
-          <button class="control-button" data-control="left" aria-label="向左移動">←</button>
-          <button class="control-button" data-control="right" aria-label="向右移動">→</button>
-          <button class="control-button jump-button" data-control="jump" aria-label="跳躍">跳！</button>
-        </div>
+        <aside class="side-column">
+          <section class="side-card journey-card">
+            <div class="side-title"><span class="side-title-icon">✧</span><div><p>MISSION MAP</p><h2>五站星球任務</h2></div></div>
+            <ol class="level-map" aria-label="五個關卡">
+              <li class="level-step active" data-level="0"><span class="step-number">1</span><span><strong>加法星</strong><small>加法練習</small></span><span class="step-check">●</span></li>
+              <li class="level-step" data-level="1"><span class="step-number">2</span><span><strong>減法星</strong><small>減法練習</small></span><span class="step-check">●</span></li>
+              <li class="level-step" data-level="2"><span class="step-number">3</span><span><strong>乘法星</strong><small>乘法練習</small></span><span class="step-check">●</span></li>
+              <li class="level-step" data-level="3"><span class="step-number">4</span><span><strong>除法星</strong><small>整除練習</small></span><span class="step-check">●</span></li>
+              <li class="level-step" data-level="4"><span class="step-number">5</span><span><strong>綜合星</strong><small>混合挑戰</small></span><span class="step-check">●</span></li>
+            </ol>
+          </section>
+
+          <section class="side-card how-card">
+            <div class="side-title"><span class="side-title-icon peach">?</span><div><p>HOW TO PLAY</p><h2>遊戲方式</h2></div></div>
+            <div class="rule-row"><span class="rule-icon move-icon">↔</span><span>左右移動，跳上平台</span></div>
+            <div class="rule-row"><span class="rule-icon answer-icon">✦</span><span>碰到正確答案泡泡</span></div>
+            <div class="score-rules"><div><span class="plus">＋10</span><small>答對加分</small></div><div><span class="minus">－5</span><small>答錯扣分</small></div></div>
+          </section>
+
+          <div class="encouragement"><span aria-hidden="true">✨</span><p>慢慢想，勇敢試。<br /><strong>每一題都是新發現！</strong></p></div>
+        </aside>
       </section>
 
-      <footer class="page-footer"><span>小小探險隊</span><span class="footer-star">✦</span><span>每一次思考，都是一次冒險。</span></footer>
+      <footer class="page-footer"><span>星際數學隊</span><span class="footer-star">✦</span><span>把數學變成一場太空冒險</span></footer>
     </main>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,16 @@
+export const gameElements = {
+  levelLabel: document.getElementById("level-label"),
+  roundLabel: document.getElementById("round-label"),
+  questionLabel: document.getElementById("question-label"),
+  scoreLabel: document.getElementById("score-label"),
+  progressFill: document.getElementById("progress-fill"),
+  feedback: document.getElementById("feedback"),
+  startScreen: document.getElementById("start-screen"),
+  startButton: document.getElementById("start-button"),
+  levelClearScreen: document.getElementById("level-clear-screen"),
+  nextLevelButton: document.getElementById("next-level-button"),
+  completeScreen: document.getElementById("complete-screen"),
+  restartButton: document.getElementById("restart-button"),
+  finalScore: document.getElementById("final-score"),
+  levelSteps: Array.from(document.querySelectorAll(".level-step")),
+};

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "kenney-asset-finder": {
+      "source": "../../../../../private/tmp/kenney-asset-finder",
+      "sourceType": "local",
+      "computedHash": "fb660ca0ddf07b3c3b9a7a89ceefa5ac3264049a2215fd2ed90712a246dc97ff"
+    }
+  }
+}
